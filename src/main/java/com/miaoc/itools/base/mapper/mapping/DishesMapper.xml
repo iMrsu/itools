@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miaoc.itools.base.mapper.DishesMapper">
+
+    <resultMap id="dishes" type="com.miaoc.itools.base.entity.Dishes">
+        <id column="dishes_id" property="dishesId" />
+        <result column="dishes_name" property="dishesName" />
+        <result column="price" property="price" />
+        <result column="count" property="count" />
+        <result column="description" property="description" />
+        <result column="describes" property="describes" />
+        <result column="remarks" property="remarks" />
+    </resultMap>
+    <select id="dishes" resultMap="dishes">
+        SELECT
+            b.dishes_id,
+            b.dishes_name,
+            b.price,
+            b.count,
+            b.description,
+            b.describes,
+            b.remarks
+        FROM
+            dishes b
+            LIMIT 1
+
+    </select>
+
+</mapper>

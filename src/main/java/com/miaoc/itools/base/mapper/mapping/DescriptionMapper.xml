@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miaoc.itools.base.mapper.DescriptionMapper">
+
+    <resultMap id="descriptionMap" type="com.miaoc.itools.base.entity.Description">
+        <id column="description_id" property="descriptionId" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <collection property="dishes" ofType="com.miaoc.itools.base.entity.Dishes" javaType="java.util.ArrayList" >
+            <id column="dishes_id" property="dishesId" />
+            <result column="description_id" property="descriptionId" />
+            <result column="b_name" property="name" />
+            <result column="price" property="price" />
+            <result column="sell_count" property="sellCount" />
+            <result column="description" property="description" />
+            <result column="info" property="info" />
+            <result column="remarks" property="remarks" />
+        </collection>
+    </resultMap>
+    <select id="getdishes" resultMap="descriptionMap">
+        SELECT
+            a.description_id,a.name,a.type,b.dishes_id,b.description_id,b.name as b_name,b.price,b.sell_count,b.description,b.info,b.remarks
+        FROM
+            Description a
+            LEFT JOIN dishes b ON a.description_id = b.description_id
+            ORDER BY a.description_id,b.description
+    </select>
+
+</mapper>

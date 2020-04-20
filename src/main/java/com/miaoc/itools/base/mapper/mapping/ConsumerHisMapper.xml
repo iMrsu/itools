@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miaoc.itools.base.mapper.ConsumerHisMapper">
+
+    <insert id="createBatchConsumerHisList" useGeneratedKeys="true" parameterType="java.util.List" >
+        insert into
+        consumer_his (id,dishes_id,record_id,describes,remarks)
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.id},#{item.dishesId},#{item.recordId}, #{item.describes},#{item.remarks})
+        </foreach>
+    </insert>
+
+</mapper>

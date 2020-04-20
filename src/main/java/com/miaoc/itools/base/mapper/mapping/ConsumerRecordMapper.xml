@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.miaoc.itools.base.mapper.ConsumerRecordMapper">
+
+    <insert id="addConsumeRecord" useGeneratedKeys="true" keyProperty="id" parameterType="com.miaoc.itools.base.entity.ConsumerRecord">
+        insert into
+            consumer_record (record_id,table_id,total_price,consumer_data,describes,remarks)
+        values
+            (#{recordId},#{tableId},#{totalPrice}, #{consumerData},#{describes},#{remarks})
+    </insert>
+
+</mapper>
