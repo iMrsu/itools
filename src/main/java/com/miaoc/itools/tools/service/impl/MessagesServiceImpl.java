@@ -1,16 +1,13 @@
 package com.miaoc.itools.tools.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.miaoc.itools.base.entity.ResBody;
 import com.miaoc.itools.tools.entity.Message;
 import com.miaoc.itools.tools.mapper.MessageMapper;
-import com.miaoc.itools.tools.service.IMessageService;
+import com.miaoc.itools.tools.service.IMessagesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.miaoc.itools.utils.MessagePushUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * <p>
@@ -21,7 +18,7 @@ import javax.annotation.Resource;
  * @since 2019-10-20
  */
 @Service("iMessageService")
-public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message> implements IMessageService {
+public class MessagesServiceImpl extends ServiceImpl<MessageMapper, Message> implements IMessagesService {
 
     @Autowired
     private MessagePushUtils messagePushUtils;

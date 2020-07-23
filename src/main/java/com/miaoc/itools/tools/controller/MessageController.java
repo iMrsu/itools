@@ -2,14 +2,9 @@ package com.miaoc.itools.tools.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.miaoc.itools.base.entity.ResBody;
-import com.miaoc.itools.tools.service.IMessageService;
+import com.miaoc.itools.tools.service.IMessagesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import org.springframework.stereotype.Controller;
-
-import javax.annotation.Resource;
 
 /**
  * <p>
@@ -25,7 +20,7 @@ import javax.annotation.Resource;
 public class MessageController {
 
     @Autowired
-    private IMessageService iMessageService;
+    private IMessagesService iMessageService;
     @RequestMapping(value = "/messageSend")
     @ResponseBody
     public Object message(@RequestBody JSONObject req) throws Exception {

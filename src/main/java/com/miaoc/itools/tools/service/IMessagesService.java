@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @author cc
  * @since 2019-10-20
  */
-public interface IMessageService extends IService<Message> {
+public interface IMessagesService extends IService<Message> {
 
     Object message (@RequestBody JSONObject req);
 
