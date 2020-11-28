@@ -5,14 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.miaoc.itools.base.entity.ConsumerRecord;
 import com.miaoc.itools.base.entity.ResBody;
 import com.miaoc.itools.base.service.IConsumerRecordService;
-import com.miaoc.itools.base.service.IDishesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import org.springframework.stereotype.Controller;
-
 import java.util.List;
-
 /**
  * <p>
  *  前端控制器
